@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ydk.mqtt.test.MqttTestActivity">
+
+    <Button
+        android:id="@+id/connectMqtt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="链接" />
+
+    <Button
+        android:id="@+id/disconnect"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="断开链接" />
+
+    <Button
+        android:id="@+id/publish"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="发送群组消息" />
+
+    <Button
+        android:id="@+id/subscribe"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="订阅群组" />
+
+    <Button
+        android:id="@+id/unsubscribe"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="取消订阅群组" />
+
+    <Button
+        android:id="@+id/publish_user"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="发送个人消息" />
+
+    <Button
+        android:id="@+id/subscribe_user"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="订阅个人消息" />
+
+    <Button
+        android:id="@+id/unsubscribe_user"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="取消订阅个人消息" />
+
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+node_modules
+build
+scripts
+jest
+rn-cli.config.js
+config-overrides.js
+babel.config.js
+metro.config.js
+jest.config.js

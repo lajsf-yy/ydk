@@ -1,0 +1,18 @@
+apply from: "../../../android/ydk-module.gradle"
+
+android {
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+    lintOptions {
+        abortOnError false
+    }
+//    resourcePrefix 'yui_'
+}
+
+dependencies {
+    api "androidx.recyclerview:recyclerview:${rootProject.ext.androidx_recyclerview}"
+    implementation "com.github.bumptech.glide:glide:4.9.0"
+    api project(":ydk-core")
+   
+}

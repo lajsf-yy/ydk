@@ -1,0 +1,7 @@
+apply from: "../../../android/ydk-module.gradle"
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.aar'])
+    // api(name: 'geetest_sensebot_android_v3.5.7.4', ext: 'aar')
+    api project(':ydk-network')
+}

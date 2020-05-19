@@ -1,0 +1,78 @@
+{
+  "authors" : "Google Inc.",
+  "compiler_flags" : "-D_THREAD_SAFE",
+  "default_subspecs" : [
+    "webp",
+    "demux",
+    "mux"
+  ],
+  "homepage" : "https://developers.google.com/speed/webp/",
+  "license" : {
+    "file" : "COPYING",
+    "type" : "BSD"
+  },
+  "name" : "libwebp",
+  "platforms" : {
+    "ios" : "6.0",
+    "osx" : "10.8",
+    "tvos" : "9.0",
+    "watchos" : "2.0"
+  },
+  "pod_target_xcconfig" : {
+    "USER_HEADER_SEARCH_PATHS" : "$(inherited) ${PODS_ROOT}/libwebp/ ${PODS_TARGET_SRCROOT}/"
+  },
+  "prepare_command" : "sed -i.bak 's/<inttypes.h>/<stdint.h>/g' './src/webp/types.h'",
+  "preserve_paths" : "src",
+  "requires_arc" : false,
+  "source" : {
+    "git" : "https://chromium.googlesource.com/webm/libwebp",
+    "tag" : "v1.0.3"
+  },
+  "subspecs" : [
+    {
+      "name" : "webp",
+      "public_header_files" : [
+        "src/webp/decode.h",
+        "src/webp/encode.h",
+        "src/webp/types.h",
+        "src/webp/mux_types.h",
+        "src/webp/format_constants.h"
+      ],
+      "source_files" : [
+        "src/webp/decode.h",
+        "src/webp/encode.h",
+        "src/webp/types.h",
+        "src/webp/mux_types.h",
+        "src/webp/format_constants.h",
+        "src/utils/*.{h,c}",
+        "src/dsp/*.{h,c}",
+        "src/dec/*.{h,c}",
+        "src/enc/*.{h,c}"
+      ]
+    },
+    {
+      "dependencies" : {
+        "libwebp/webp" : []
+      },
+      "name" : "demux",
+      "public_header_files" : "src/webp/demux.h",
+      "source_files" : [
+        "src/demux/*.{h,c}",
+        "src/webp/demux.h"
+      ]
+    },
+    {
+      "dependencies" : {
+        "libwebp/demux" : []
+      },
+      "name" : "mux",
+      "public_header_files" : "src/webp/mux.h",
+      "source_files" : [
+        "src/mux/*.{h,c}",
+        "src/webp/mux.h"
+      ]
+    }
+  ],
+  "summary" : "Library to encode and decode images in WebP format.",
+  "version" : "1.0.3"
+}

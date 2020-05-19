@@ -1,0 +1,44 @@
+
+apply plugin: 'java-library'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
+repositories {
+        mavenLocal()
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../../node_modules/react-native/android"
+        }
+        maven {
+            url "$rootProject.projectDir/../maven"
+        }
+        maven {
+            url "$rootProject.projectDir/../../node_modules/ydk/maven"
+        }
+        maven {
+            url "$rootProject.projectDir/../../node_modules/react-native/android"
+        }
+				
+    }
+dependencies {
+	 	
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'org.apache.commons:commons-collections4:4.1'
+//    compileOnly 'com.google.auto.service:auto-service:1.0-rc5'
+    //api 'androidx.annotation:annotation:1.0.2'
+    api "io.reactivex.rxjava2:rxjava:2.2.0"
+    api 'ydk:ydk-annotations:+'
+    implementation 'com.squareup:javapoet:1.10.0'
+    compileOnly files(org.gradle.internal.jvm.Jvm.current().getToolsJar())
+  //  compileOnly 'com.google.android:android:4.1.1.4'
+
+}
+ apply from: '../maven-local.gradle'

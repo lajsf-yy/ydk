@@ -1,0 +1,15 @@
+apply from: "../../../android/ydk-module.gradle"
+
+
+
+dependencies {
+
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.0.2'
+    api 'com.aliyun.dpa:oss-android-sdk:2.9.2'
+    api 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    api('com.trello.rxlifecycle3:rxlifecycle-components:3.1.0') {
+        exclude group: "io.reactivex.rxjava2,com.android.support"
+    }
+
+}

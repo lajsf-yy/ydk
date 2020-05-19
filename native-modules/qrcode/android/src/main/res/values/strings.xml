@@ -1,0 +1,20 @@
+<resources>
+    <string name="scan_tips">将二维码/条形码放入框内\n即可自动扫描</string>
+    <string name="picture_max_hint">你最多只能选择%1$d张照片</string>
+    <string name="picture_only_choose_single_video">视频只能单个发送</string>
+    <string name="picture_mar">图片已损坏</string>
+    <string name="picture_camera_roll">相机胶卷</string>
+    <string name="video_un_exist">视频文件不存在</string>
+    <string name="folder_name">%1$s（%2$d）</string>
+    <string name="un_falsh_light">您的设备不支持闪光灯</string>
+
+    <string name="msg_camera_framework_bug">The camera is occupied or has no camera permission, please check</string>
+    <string name="button_ok">Exit</string>
+    <string name="scan_code">Scan QR Code</string>
+    <string name="open_flash">Turn on the flash</string>
+    <string name="close_flash">Turn off the flash</string>
+    <string name="gallery">Gallery</string>
+    <string name="scan_failed_tip">Scan image failed, please retry.</string>
+
+
+</resources>

@@ -1,0 +1,9 @@
+apply from: "../../../android/ydk-module.gradle"
+apply plugin: 'kotlin-android-extensions'
+
+
+dependencies {
+   
+    api 'org.fusesource.mqtt-client:mqtt-client:1.12'
+    api project(":ydk-network")
+}

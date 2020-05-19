@@ -1,0 +1,7 @@
+apply from: "../../../android/ydk-module.gradle"
+
+dependencies {
+
+    api 'com.zhuge.analysis:zhugeio:3.3.3'
+
+}

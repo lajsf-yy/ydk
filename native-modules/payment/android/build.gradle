@@ -1,0 +1,56 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+import org.codehaus.groovy.runtime.ResourceGroovyMethods
+
+apply from: "../../../android/ydk-module.gradle"
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar', "*.aar"], dir: 'libs')
+api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.3.1'
+    implementation project(":ydk-share")
+
+}
+
+
+
+void addWeChatCBActivity() {
+
+    //获取 applicationId 方法1
+//    com.android.build.gradle.AppExtension appExtension = appPro.getExtensions().getByName("android")
+    //  def applicationId = appExtension.defaultConfig.applicationId
+
+    //获取 applicationId 方法2 读取项目配置文件
+    def packName = rootProject.ext.find("applicationId")
+    // def packName = rootProject.ext.applicationId
+    println("addWeChatCB applicationId  " + packName)
+    if (!packName) {
+        return
+    }
+    def weChatDir = new File(rootProject.projectDir, "../node_modules/ydk/native-modules/payment/android/src/main/java/${packName.replace(".", "/")}/wxapi")
+    weChatDir.mkdirs()
+    println("addWeChatCB weChatDir " + weChatDir.getAbsolutePath())
+
+    def targetFile = new File(rootProject.projectDir, "../node_modules/ydk/native-modules/payment/android/src/main/java/ydk/payment/wxapi")
+    println("addWeChatCB targetFile " + targetFile.getAbsolutePath())
+    File[] files = targetFile.listFiles()
+    if (!files || !files.length) {
+        return
+    }
+    for (int i = 0; i < files.length; i++) {
+        File file = files[i]
+        if (!file.getName().endsWith(".java")) {
+            continue
+        }
+        def weChatFile = new File(weChatDir, file.getName())
+        println("addWeChatCB weChatPath " + weChatFile.getAbsolutePath())
+        String fileText = file.text
+
+        Pattern p = Pattern.compile("package\\s*(.*?)\\;")
+        Matcher m = p.matcher(fileText)
+        if (m.find()) {
+            fileText = fileText.replace(m.group(1), "${packName}.wxapi")
+            ResourceGroovyMethods.write(weChatFile, fileText, 'UTF-8')
+        }
+    }
+}

@@ -1,0 +1,77 @@
+import org.codehaus.groovy.runtime.ResourceGroovyMethods
+
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+apply from: "../../../android/ydk-module.gradle"
+
+
+def getSchemeId() {
+    if (rootProject.ext.has("ydk"))
+        return rootProject.ext.get("ydk").share.qqAppId
+    else '123456'
+}
+
+android {
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [
+                    QQ_SCHEME: 'tencent' + getSchemeId()
+            ]
+        }
+        release.initWith(buildTypes.debug)
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+
+}
+
+afterEvaluate {
+    //添加微信回调的activity
+    // addWeChatCBActivity()
+}
+
+void addWeChatCBActivity() {
+
+    //获取 applicationId 方法2 读取项目配置文件
+    def packName = rootProject.ext.find("applicationId")
+    // def packName = rootProject.ext.applicationId
+    if (!packName) {
+        return
+    }
+    def weChatDir = new File(rootProject.projectDir, "../node_modules/ydk/native-modules/share/android/src/main/java/${packName.replace(".", "/")}/wxapi")
+    weChatDir.mkdirs()
+    println("addWeChatCB share weChatDir " + weChatDir.getAbsolutePath())
+
+    def targetFile = new File(rootProject.projectDir, "../node_modules/ydk/native-modules/share/android/src/main/java/ydk/share/wxapi")
+    println("addWeChatCB share targetFile " + targetFile.getAbsolutePath())
+    File[] files = targetFile.listFiles()
+    if (!files || !files.length) {
+        return
+    }
+    for (int i = 0; i < files.length; i++) {
+        File file = files[i]
+        if (!file.getName().endsWith(".java")) {
+            continue
+        }
+        def weChatFile = new File(weChatDir, file.getName())
+        println("addWeChatCB share weChatPath " + weChatFile.getAbsolutePath())
+        String fileText = file.text
+
+        Pattern p = Pattern.compile("package\\s*(.*?)\\;")
+        Matcher m = p.matcher(fileText)
+        if (m.find()) {
+            fileText = fileText.replace(m.group(1), "${packName}.wxapi")
+            ResourceGroovyMethods.write(weChatFile, fileText, 'UTF-8')
+        }
+    }
+}

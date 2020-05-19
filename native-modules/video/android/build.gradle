@@ -1,0 +1,21 @@
+apply from: "../../../android/ydk-module.gradle"
+
+
+def hasIjkDependencies(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+
+
+dependencies {
+
+    api 'com.google.android.exoplayer:exoplayer:2.7.3'
+    api('com.google.android.exoplayer:extension-okhttp:2.7.3') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+}
+repositories {
+    mavenCentral()
+}
+

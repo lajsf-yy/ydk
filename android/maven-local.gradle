@@ -1,0 +1,34 @@
+
+apply plugin: 'maven'
+uploadArchives {
+    repositories.mavenDeployer {
+        def pomUrl = POM_URL
+        //这里就是最后输出地址，在自己电脑上新建个文件夹，把文件夹路径粘贴在此
+        //注意”file://“ + 路径，有三个斜杠，别漏了
+        repository(url: "file://$rootProject.rootDir/$pomUrl")
+        pom.project {
+            groupId POM_GROUP_ID
+            artifactId POM_ARTIFACT_ID
+            version POM_VERSION
+        }
+
+    }
+}
+
+//以下代码会生成jar包源文件，如果是不开源码，请不要输入这段
+//aar包内包含注释
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from 'src/main/java'
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+build.dependsOn(uploadArchives)
+afterEvaluate { project ->
+//    uploadArchives
+//    println(rootProject.rootDir)
+// 3.maven-输出路径
+
+}

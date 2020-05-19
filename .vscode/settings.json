@@ -1,0 +1,36 @@
+{
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  // "javascript.validate.enable": false,
+  "files.associations": {
+    ".eslintrc.js": "javascriptreact",
+    "*.js": "javascript"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".buckconfig": true,
+    ".flowconfig": true,
+    ".watchmanconfig": true,
+    ".gitattributes": true,
+    "yarn-error.log": true
+  },
+  // 一个制表符等于的空格数。该设置在 "editor.detectIndentation" 启用时根据文件内容可能会被覆盖。
+  "editor.tabSize": 2,
+  // 默认行尾字符。使用 \n 表示 LF，\r\n 表示 CRLF。
+  "files.eol": "\n",
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.suggestOnTriggerCharacters": true,
+  // 配置 glob 模式以在搜索中排除文件和文件夹。从 files.exclude 设置中继承所有 glob 模式。
+  "search.exclude": {
+    "**/bower_components": true,
+    "**/ios": true,
+    "**/android": true
+  }
+}

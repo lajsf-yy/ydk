@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YdkViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDV-WJ-ztD">
+                    <rect key="frame" x="144.5" y="58" width="86" height="30"/>
+                    <state key="normal" title="test network"/>
+                    <connections>
+                        <action selector="testNetwork:" destination="-1" eventType="touchUpInside" id="cTp-fJ-Afn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-Hw-Rom">
+                    <rect key="frame" x="156.5" y="96" width="62" height="30"/>
+                    <state key="normal" title="test alert"/>
+                    <connections>
+                        <action selector="testAlert:" destination="-1" eventType="touchUpInside" id="Aa9-DN-L4A"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52c-ZH-vip">
+                    <rect key="frame" x="134.5" y="134" width="106" height="30"/>
+                    <state key="normal" title="test permission"/>
+                    <connections>
+                        <action selector="testPermission:" destination="-1" eventType="touchUpInside" id="GSO-yF-lXw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seA-fA-j5e">
+                    <rect key="frame" x="145" y="174" width="85" height="30"/>
+                    <state key="normal" title="test location"/>
+                    <connections>
+                        <action selector="testLocation:" destination="-1" eventType="touchUpInside" id="8V3-oY-hab"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6g8-Ew-oiS">
+                    <rect key="frame" x="153.5" y="223" width="68" height="30"/>
+                    <state key="normal" title="test webp"/>
+                    <connections>
+                        <action selector="testWebp:" destination="-1" eventType="touchUpInside" id="t0y-16-PTQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPw-7L-nLk">
+                    <rect key="frame" x="158.5" y="261" width="58" height="30"/>
+                    <state key="normal" title="test trim"/>
+                    <connections>
+                        <action selector="trim:" destination="-1" eventType="touchUpInside" id="od8-4v-fCg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyM-wy-zp0">
+                    <rect key="frame" x="144" y="299" width="87" height="30"/>
+                    <state key="normal" title="test ijkplayer"/>
+                    <connections>
+                        <action selector="testIjkplayer" destination="-1" eventType="touchUpInside" id="jr3-bp-uoB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6g8-Ew-oiS" firstAttribute="top" secondItem="seA-fA-j5e" secondAttribute="bottom" constant="19" id="1ow-Pd-aQg"/>
+                <constraint firstItem="hyM-wy-zp0" firstAttribute="top" secondItem="IPw-7L-nLk" secondAttribute="bottom" constant="8" id="4fm-7g-0eP"/>
+                <constraint firstItem="52c-ZH-vip" firstAttribute="centerX" secondItem="Tbe-Hw-Rom" secondAttribute="centerX" id="5OU-NZ-3Iv"/>
+                <constraint firstItem="IPw-7L-nLk" firstAttribute="centerX" secondItem="6g8-Ew-oiS" secondAttribute="centerX" id="69S-zC-I4m"/>
+                <constraint firstItem="Tbe-Hw-Rom" firstAttribute="top" secondItem="lDV-WJ-ztD" secondAttribute="bottom" constant="8" id="6K0-G1-Ir5"/>
+                <constraint firstItem="lDV-WJ-ztD" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="58" id="Bdn-fu-ASe"/>
+                <constraint firstItem="52c-ZH-vip" firstAttribute="top" secondItem="Tbe-Hw-Rom" secondAttribute="bottom" constant="8" id="C5U-bp-j3b"/>
+                <constraint firstItem="lDV-WJ-ztD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D23-zo-GcJ"/>
+                <constraint firstItem="Tbe-Hw-Rom" firstAttribute="centerX" secondItem="lDV-WJ-ztD" secondAttribute="centerX" id="HIl-Lr-wYp"/>
+                <constraint firstItem="seA-fA-j5e" firstAttribute="top" secondItem="52c-ZH-vip" secondAttribute="bottom" constant="10" id="IDa-dQ-eTW"/>
+                <constraint firstItem="6g8-Ew-oiS" firstAttribute="centerX" secondItem="seA-fA-j5e" secondAttribute="centerX" id="eBO-Yc-s1n"/>
+                <constraint firstItem="IPw-7L-nLk" firstAttribute="top" secondItem="6g8-Ew-oiS" secondAttribute="bottom" constant="8" id="y7r-RH-OmS"/>
+                <constraint firstItem="seA-fA-j5e" firstAttribute="centerX" secondItem="52c-ZH-vip" secondAttribute="centerX" id="yEG-ad-NbP"/>
+                <constraint firstItem="hyM-wy-zp0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z5V-Oo-EBl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-183" y="111"/>
+        </view>
+    </objects>
+</document>

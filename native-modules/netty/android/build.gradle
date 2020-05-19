@@ -1,0 +1,13 @@
+apply from: "../../../android/ydk-module.gradle"
+
+
+
+dependencies {
+
+
+  //  api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+  //  api 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.29.Final'
+
+    api project(":ydk-network")
+}

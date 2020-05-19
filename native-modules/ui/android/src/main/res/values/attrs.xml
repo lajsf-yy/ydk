@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="yui_SubsamplingScaleImageView">
+        <attr name="yui_src" format="reference"/>
+        <attr name="yui_assetName" format="string"/>
+        <attr name="yui_panEnabled" format="boolean"/>
+        <attr name="yui_zoomEnabled" format="boolean"/>
+        <attr name="yui_quickScaleEnabled" format="boolean"/>
+        <attr name="yui_tileBackgroundColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="yui_pickerview">
+        <attr name="yui_wheelview_gravity">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+        </attr>
+        <attr name="yui_wheelview_textSize" format="dimension" />
+        <attr name="yui_wheelview_textColorOut" format="color" />
+        <attr name="yui_wheelview_textColorCenter" format="color" />
+        <attr name="yui_wheelview_dividerColor" format="color" />
+        <attr name="yui_wheelview_lineSpacingMultiplier" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="yui_ucrop_UCropView">
+
+        <!--Crop image view-->
+        <attr name="yui_ucrop_aspect_ratio_x" format="float"/>
+        <attr name="yui_ucrop_aspect_ratio_y" format="float"/>
+
+        <!--Overlay view-->
+        <attr name="yui_ucrop_show_oval_crop_frame" format="boolean"/>
+        <attr name="yui_ucrop_circle_dimmed_layer" format="boolean"/>
+        <attr name="yui_ucrop_dimmed_color" format="color"/>
+
+        <attr name="yui_ucrop_grid_stroke_size" format="dimension"/>
+        <attr name="yui_ucrop_grid_color" format="color"/>
+        <attr name="yui_ucrop_grid_row_count" format="integer"/>
+        <attr name="yui_ucrop_grid_column_count" format="integer"/>
+        <attr name="yui_ucrop_show_grid" format="boolean"/>
+
+        <attr name="yui_ucrop_frame_stroke_size" format="dimension"/>
+        <attr name="yui_ucrop_frame_color" format="color"/>
+        <attr name="yui_ucrop_show_frame" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="yui_ucrop_AspectRatioTextView">
+
+        <attr name="yui_ucrop_artv_ratio_title" format="string"/>
+
+        <attr name="yui_ucrop_artv_ratio_x" format="float"/>
+        <attr name="yui_ucrop_artv_ratio_y" format="float"/>
+
+    </declare-styleable>
+
+    <attr name="picture.title.textColor" format="reference|color" />
+    <attr name="picture.right.textColor" format="reference|color" />
+    <attr name="picture.leftBack.icon" format="reference" />
+    <attr name="picture.arrow_down.icon" format="reference" />
+    <attr name="picture.arrow_up.icon" format="reference" />
+    <attr name="picture.num.style" format="reference" />
+    <attr name="picture.checked.style" format="reference" />
+    <attr name="picture.bottom.bg" format="reference|color" />
+    <attr name="picture.preview.textColor" format="reference|color" />
+    <attr name="picture.complete.textColor" format="reference|color" />
+    <attr name="picture.ac_preview.title.textColor" format="reference|color" />
+    <attr name="picture.ac_preview.complete.textColor" format="reference|color" />
+    <attr name="picture.ac_preview.bottom.bg" format="reference|color" />
+    <attr name="picture.status.color" format="reference|color" />
+    <attr name="picture.ac_preview.title.bg" format="reference|color" />
+    <attr name="picture.preview.leftBack.icon" format="reference" />
+    <attr name="picture.statusFontColor" format="boolean" />
+    <attr name="picture.style.numComplete" format="boolean" />
+    <attr name="picture.style.checkNumMode" format="boolean" />
+    <attr name="picture.crop.toolbar.bg" format="reference|color" />
+    <attr name="picture.crop.status.color" format="reference|color" />
+    <attr name="picture.crop.title.color" format="reference|color" />
+    <attr name="picture.folder_checked_dot" format="reference" />
+
+</resources>

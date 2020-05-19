@@ -1,0 +1,23 @@
+apply from: "../../../android/ydk-module.gradle"
+
+android {
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        ndk {
+            abiFilters "armeabi"//, "armeabi-v7a", "arm64-v8a", "x86","arm64-v8a","x86_64"
+        }
+        manifestPlaceholders = [
+                AMAP_APPKEY: "${ydk.map.appKey}",
+        ]
+    }
+    lintOptions {
+        abortOnError false
+    }
+//    resourcePrefix 'yui_'
+}
+
+dependencies {
+    implementation 'com.amap.api:location:4.7.0'
+    api project(":ydk-core")
+   
+}

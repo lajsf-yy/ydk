@@ -1,0 +1,79 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+#source 'https://cdn.cocoapods.org/'
+
+#install! 'cocoapods', generate_multiple_pod_projects: true
+
+require_relative '../../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+target 'example' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+  root_path = '../..'
+  node_modules_path = "#{root_path}/node_modules"
+  react_native = "#{node_modules_path}/react-native"
+  # pod 'MQTT', :git =>'http://frontend:frontend@git.yryz.com/iOS/MQTT.git', :branch => 'master'
+  # pod 'TZImagePickerController', :path => "#{node_modules_path}/TZImagePickerController"
+
+  pod 'FBLazyVector', :path => "#{react_native}/Libraries/FBLazyVector"
+  pod 'FBReactNativeSpec', :path => "#{react_native}/Libraries/FBReactNativeSpec"
+  pod 'RCTRequired', :path => "#{react_native}/Libraries/RCTRequired"
+  pod 'RCTTypeSafety', :path => "#{react_native}/Libraries/TypeSafety"
+  pod 'React', :path => "#{react_native}/"
+  pod 'React-Core', :path => "#{react_native}/"
+  pod 'React-CoreModules', :path => "#{react_native}/React/CoreModules"
+  pod 'React-Core/DevSupport', :path => "#{react_native}/"
+  pod 'React-RCTActionSheet', :path => "#{react_native}/Libraries/ActionSheetIOS"
+  pod 'React-RCTAnimation', :path => "#{react_native}/Libraries/NativeAnimation"
+  pod 'React-RCTBlob', :path => "#{react_native}/Libraries/Blob"
+  pod 'React-RCTImage', :path => "#{react_native}/Libraries/Image"
+  pod 'React-RCTLinking', :path => "#{react_native}/Libraries/LinkingIOS"
+  pod 'React-RCTNetwork', :path => "#{react_native}/Libraries/Network"
+  pod 'React-RCTSettings', :path => "#{react_native}/Libraries/Settings"
+  pod 'React-RCTText', :path => "#{react_native}/Libraries/Text"
+  pod 'React-RCTVibration', :path => "#{react_native}/Libraries/Vibration"
+  pod 'React-Core/RCTWebSocket', :path => "#{react_native}/"
+  
+  pod 'React-cxxreact', :path => "#{react_native}/ReactCommon/cxxreact"
+  pod 'React-jsi', :path => "#{react_native}/ReactCommon/jsi"
+  pod 'React-jsiexecutor', :path => "#{react_native}/ReactCommon/jsiexecutor"
+  pod 'React-jsinspector', :path => "#{react_native}/ReactCommon/jsinspector"
+  pod 'ReactCommon/jscallinvoker', :path => "#{react_native}/ReactCommon"
+  pod 'ReactCommon/turbomodule/core', :path => "#{react_native}/ReactCommon"
+  pod 'Yoga', :path => "#{react_native}/ReactCommon/yoga"
+  
+  pod 'DoubleConversion', :podspec => "#{react_native}/third-party-podspecs/DoubleConversion.podspec"
+  pod 'glog', :podspec => "#{react_native}/third-party-podspecs/glog.podspec"
+  pod 'Folly', :podspec => "#{react_native}/third-party-podspecs/Folly.podspec"
+  pod 'RNGestureHandler', :path => "#{node_modules_path}/react-native-gesture-handler"
+  pod 'react-native-netinfo', :path => "#{node_modules_path}/@react-native-community/netinfo"
+  pod 'RNCAsyncStorage', :path => "#{node_modules_path}/@react-native-community/async-storage"
+  
+  # ydk
+  native_modules_path = "#{root_path}/native-modules"
+  
+  pod 'ydk-core', :path => "#{native_modules_path}/core/ios"
+  pod 'ydk-share', :path => "#{native_modules_path}/share/ios"
+  pod 'ydk-network', :path => "#{native_modules_path}/network/ios"
+  pod 'ydk-track', :path => "#{native_modules_path}/track/ios"
+  pod 'ydk-react', :path => "#{native_modules_path}/react/ios"
+  # pod 'ydk-mqtt', :path => "#{native_modules_path}/mqtt/ios"
+  pod 'ydk-toolkit', :path => "#{native_modules_path}/toolkit/ios"
+  pod 'ydk-album', :path => "#{native_modules_path}/album/ios"
+  pod 'ydk-audio', :path => "#{native_modules_path}/audio/ios"
+  pod 'ydk-permission', :path => "#{native_modules_path}/permission/ios"
+  pod 'ydk-captcha', :path => "#{native_modules_path}/captcha/ios"
+  pod 'ydk-video', :path => "#{native_modules_path}/video/ios"
+  pod 'ydk-location', :path => "#{native_modules_path}/location/ios"
+  pod 'ydk-payment', :path => "#{native_modules_path}/payment/ios"
+  pod 'ydk-qrcode', :path => "#{native_modules_path}/qrcode/ios"
+  pod 'libwebp', :path => "#{native_modules_path}/libwebp/ios"
+  pod 'ydk-trimmer', :path => "#{native_modules_path}/trimmer/ios"
+  pod 'ijkplayer', :path => "#{native_modules_path}/ijkplayer/ios"
+	pod 'JSONKit', :path => "#{native_modules_path}/JSONKit/ios"
+	pod 'ydk-navigation', :path => "#{native_modules_path}/navigation/ios"
+#  pod 'AlipaySDK-iOS', :path => "#{native_modules_path}/AlipaySDK-iOS"
+  
+  pod 'YYModel'
+  
+end

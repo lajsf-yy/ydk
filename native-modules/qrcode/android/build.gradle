@@ -1,0 +1,8 @@
+apply from: "../../../android/ydk-module.gradle"
+
+
+dependencies {
+    // implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.google.zxing:core:3.3.3'
+    api project(":ydk-core")
+}

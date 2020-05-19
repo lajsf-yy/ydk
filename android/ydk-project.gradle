@@ -1,0 +1,45 @@
+
+
+allprojects {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+
+
+        maven { url 'https://jitpack.io' }
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../../node_modules/react-native/android"
+        }
+        maven {
+            url "$rootProject.projectDir/../maven"
+        }
+        maven {
+            url "$rootProject.projectDir/../../node_modules/ydk/maven"
+        }
+        maven {
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
+    }
+}
+
+subprojects {
+    subproject ->
+        beforeEvaluate { project ->
+            def manifest = new File("$project.projectDir/src/main/AndroidManifest.xml")
+            if (manifest.exists() && manifest.text.indexOf("<uses-sdk") > -1) {
+                println "remove project $project uses-sdk"
+                def newManifest = manifest.text.replaceAll("<uses-sdk.*/>", "")
+                manifest.write(newManifest, 'UTF-8')
+//                println newManifest
+            }
+        }
+        configurations.all {
+            resolutionStrategy {
+                force "com.facebook.react:react-native:$rootProject.ext.reactNativeVersion"
+            }
+        }
+}
+

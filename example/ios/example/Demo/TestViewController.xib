@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJK-2t-gBj">
+                    <rect key="frame" x="191.5" y="144" width="31" height="30"/>
+                    <state key="normal" title="连接"/>
+                    <connections>
+                        <action selector="connect:" destination="-1" eventType="touchUpInside" id="uiZ-Tp-6Jr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-Im-YPC">
+                    <rect key="frame" x="191.5" y="204" width="31" height="30"/>
+                    <state key="normal" title="订阅"/>
+                    <connections>
+                        <action selector="subscribe:" destination="-1" eventType="touchUpInside" id="JKK-qi-deU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsX-sb-SXF">
+                    <rect key="frame" x="176" y="264" width="62" height="30"/>
+                    <state key="normal" title="取消订阅"/>
+                    <connections>
+                        <action selector="unsubscribe:" destination="-1" eventType="touchUpInside" id="xI4-XJ-plc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecv-FX-1Lh">
+                    <rect key="frame" x="176" y="324" width="62" height="30"/>
+                    <state key="normal" title="发送消息"/>
+                    <connections>
+                        <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="TEC-YY-KwH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ys7-Sl-b2P">
+                    <rect key="frame" x="176" y="384" width="62" height="30"/>
+                    <state key="normal" title="裁剪视频"/>
+                    <connections>
+                        <action selector="trim:" destination="-1" eventType="touchUpInside" id="2bA-U6-r6e"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WJK-2t-gBj" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="9WV-J0-eYY"/>
+                <constraint firstItem="Ys7-Sl-b2P" firstAttribute="top" secondItem="ecv-FX-1Lh" secondAttribute="bottom" constant="30" id="9o4-oc-FP7"/>
+                <constraint firstItem="qsX-sb-SXF" firstAttribute="top" secondItem="SsS-Im-YPC" secondAttribute="bottom" constant="30" id="BJ1-w3-KbW"/>
+                <constraint firstItem="SsS-Im-YPC" firstAttribute="centerX" secondItem="WJK-2t-gBj" secondAttribute="centerX" id="FmF-2x-r4y"/>
+                <constraint firstItem="qsX-sb-SXF" firstAttribute="centerX" secondItem="SsS-Im-YPC" secondAttribute="centerX" id="K8V-t7-pHk"/>
+                <constraint firstItem="ecv-FX-1Lh" firstAttribute="centerX" secondItem="qsX-sb-SXF" secondAttribute="centerX" id="QAx-gr-y3Y"/>
+                <constraint firstItem="ecv-FX-1Lh" firstAttribute="top" secondItem="qsX-sb-SXF" secondAttribute="bottom" constant="30" id="UTo-0x-6IZ"/>
+                <constraint firstItem="Ys7-Sl-b2P" firstAttribute="centerX" secondItem="ecv-FX-1Lh" secondAttribute="centerX" id="jBP-bt-hFu"/>
+                <constraint firstItem="SsS-Im-YPC" firstAttribute="top" secondItem="WJK-2t-gBj" secondAttribute="bottom" constant="30" id="nID-V9-AKa"/>
+                <constraint firstItem="WJK-2t-gBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="poK-mp-6yc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="265" y="-33"/>
+        </view>
+    </objects>
+</document>

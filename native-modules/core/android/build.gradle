@@ -1,0 +1,2 @@
+apply from: "../../../android/ydk-module.gradle"
+

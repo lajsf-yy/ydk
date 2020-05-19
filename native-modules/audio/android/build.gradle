@@ -1,0 +1,35 @@
+
+apply from: "../../../android/ydk-module.gradle"
+
+apply plugin: 'kotlin-android'
+
+
+dependencies {
+    
+    api "com.facebook.react:react-native:$rootProject.ext.reactNativeVersion"
+    
+}
+repositories {
+    mavenCentral()
+}
+
+// task watchYdk (type: Exec) {
+// 	def config = project.hasProperty("react") ? project.react : [];
+//     def codegenFile = file('../../../bin/android/codegen.js')
+// 		if(codegenFile.exists()){
+// 			def cliPath = codegenFile.absolutePath
+// 			println "node $cliPath $rootProject.rootDir"
+// 				// workingDir cliPath
+// 				commandLine 'node', cliPath, rootProject.rootDir
+			
+//     }
+			
+// }
+ 
+// afterEvaluate{
+//     // def assembleDebug = tasks.named('assembleDebug')
+// 		if(preBuild){
+// 			 preBuild.dependsOn(watchYdk)
+// 		}
+    
+// }

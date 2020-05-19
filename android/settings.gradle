@@ -1,0 +1,62 @@
+rootProject.name = 'example'
+include ':app', ":ydk-annotations"
+include ":ydk-compiler"
+include ":ydk-react"
+project(":ydk-react").projectDir = file("../native-modules/react/android")
+include ":ydk-core"
+project(":ydk-core").projectDir = file("../native-modules/core/android")
+//
+include ":ydk-share"
+project(":ydk-share").projectDir = file("../native-modules/share/android")
+
+include ":ydk-network"
+project(":ydk-network").projectDir = file("../native-modules/network/android")
+include ':react-native-gesture-handler'
+project(':react-native-gesture-handler').projectDir =
+        new File(rootProject.projectDir, '../node_modules/react-native-gesture-handler/android')
+
+include ':@react-native-community_async-storage'
+project(':@react-native-community_async-storage').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/async-storage/android')
+//include ":ydk-netty"
+//project(":ydk-netty").projectDir = file("../native-modules/netty/android")
+
+//include ":ydk-mqtt"
+//project(":ydk-mqtt").projectDir = file("../native-modules/mqtt/android")
+
+//include ":ydk-track"
+//project(":ydk-track").projectDir = file("../native-modules/track/android")
+
+include ":ydk-ui"
+project(":ydk-ui").projectDir = file("../native-modules/ui/android")
+
+include ":ydk-album"
+project(":ydk-album").projectDir = file("../native-modules/album/android")
+
+include ":ydk-location"
+project(":ydk-location").projectDir = file("../native-modules/location/android")
+
+//include ":ydk-audio"
+//project(":ydk-audio").projectDir = file("../native-modules/audio/android")
+
+//include ":ydk-video"
+//project(":ydk-video").projectDir = file("../native-modules/video/android")
+
+include ":ydk-captcha"
+project(":ydk-captcha").projectDir = file("../native-modules/captcha/android")
+
+include ":ydk-payment"
+project(":ydk-payment").projectDir = file("../native-modules/payment/android")
+
+//include ":ydk-bugly"
+//project(":ydk-bugly").projectDir = file("../native-modules/bugly/android")
+
+
+include ":ydk-qrcode"
+project(":ydk-qrcode").projectDir = file("../native-modules/qrcode/android")
+
+include ":ydk-webview"
+project(":ydk-webview").projectDir = file("../native-modules/webview/android")
+include ":ydk-navigation"
+project(":ydk-navigation").projectDir = file("../native-modules/navigation/android")
+
+//test write

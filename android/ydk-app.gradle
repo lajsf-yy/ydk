@@ -1,0 +1,40 @@
+import groovy.json.JsonOutput
+task adbTask (type: Exec) {
+    println "执行 adb reverse tcp:8081 tcp:8081"
+    def localProperties = new File(rootProject.rootDir, "local.properties")
+    if (localProperties.exists()) {
+        Properties properties = new Properties()
+        localProperties.withInputStream {
+            instr -> properties.load(instr)
+        }
+        def sdkDir = properties.getProperty('sdk.dir')
+        def adb = "$sdkDir/platform-tools/adb"
+        println "执行 $adb reverse tcp:8081 tcp:8081"
+        commandLine "$adb", "reverse", "tcp:8081", "tcp:8081"
+    }
+
+
+}
+afterEvaluate{
+    // def assembleDebug = tasks.named('assembleDebug')
+		if(assembleDebug){
+			 assembleDebug.dependsOn(adbTask)
+		}
+    
+}
+
+android {
+
+    buildTypes {
+        debug{
+            buildConfigField "String", "YDK_CONFIG", "\"" +JsonOutput.toJson(rootProject.ext.ydk ).replaceAll("\"","\\\\\"") + "\""
+        }
+        release.initWith(buildTypes.debug)
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
